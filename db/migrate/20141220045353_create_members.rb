@@ -4,10 +4,6 @@ class CreateMembers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :name
-      t.string :refresh_token
-      t.string :access_token
-      t.timestamp :expires
-
       t.timestamps
     end
   end
