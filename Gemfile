@@ -25,6 +25,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'font-awesome-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
