@@ -5,7 +5,7 @@ gem 'rails', '3.2.18'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -21,7 +21,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
+gem 'haml-rails'
 gem 'omniauth-google-oauth2'
+gem 'figaro'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -37,3 +40,6 @@ gem 'omniauth-google-oauth2'
 
 # To use debugger
 # gem 'debugger'
+group :production do
+  gem 'pg', '0.12.2'
+end
