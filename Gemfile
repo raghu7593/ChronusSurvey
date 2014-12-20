@@ -39,7 +39,7 @@ gem 'figaro'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 group :production do
   gem 'pg', '0.12.2'
 end
