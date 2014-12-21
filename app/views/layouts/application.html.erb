@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OmniAuth Example</title>
+    <title>Chronus Survey</title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
@@ -62,8 +62,7 @@
                       </div>
                   </div>
               </li>
-
-              <li><a href="#"><%= fa_icon "money" %>&nbsp;&nbsp;Credits</a></li>
+              <li data-dialog="creditsdialog"><a href="#"><%= fa_icon "money" %>&nbsp;&nbsp;Credits</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </nav>
@@ -74,6 +73,15 @@
           <div class="side-body">
             <%= yield %>
           </div>
+      </div>
+    </div>
+
+    <div id="creditsdialog" class="dialog">
+      <div class="dialog__overlay"></div>
+      <div class="dialog__content">
+        <h2><strong>P. Naga Raghu Teja</strong></h2>
+        <h3><%= mail_to "raghutejaparisa@gmail.com" %></h3>
+        <a data-dialog-close></a>
       </div>
     </div>
   </body>
