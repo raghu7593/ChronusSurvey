@@ -4,6 +4,12 @@
 .navbar {
   margin: 0;
 }
+.nav-pull-right {
+  float: right !important;
+}
+.nav-pull-bottom {
+  margin-top: 8px;
+}
 .row {
   margin-right: 0;
   margin-left: 0;

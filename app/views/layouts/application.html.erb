@@ -12,6 +12,12 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#"><%= image_tag asset_path("cs.png") %></a>
+          <% if current_user %>
+            <%= link_to "Log out", logout_path, :class => "brand nav-pull-right nav-pull-bottom" %>
+            <a class="brand nav-pull-right nav-pull-bottom" href="#"><%= current_user.name %></a>
+          <% else %>
+            <a class="brand nav-pull-right" href="/auth/google_oauth2"><%= image_tag asset_path("google-login.png") %></a>
+          <% end %>
         </div>
       </div>
     </div>
@@ -57,7 +63,7 @@
                   </div>
               </li>
 
-              <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+              <li><a href="#"><%= fa_icon "money" %>&nbsp;&nbsp;Credits</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </nav>
@@ -66,9 +72,6 @@
       <!-- Main Content -->
       <div class="container-fluid">
           <div class="side-body">
-            <% flash.each do |name, msg| %>
-              <%= content_tag :div, msg, :id => "flash_#{name}" %>
-            <% end %>
             <%= yield %>
           </div>
       </div>
