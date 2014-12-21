@@ -42,7 +42,10 @@ gem 'font-awesome-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+group :production do
+  gem 'debugger'
+end
+
 group :production do
   gem 'pg', '0.12.2'
 end
