@@ -43,9 +43,5 @@ gem 'font-awesome-rails'
 
 # To use debugger
 group :production do
-  gem 'debugger'
-end
-
-group :production do
   gem 'pg', '0.12.2'
 end
