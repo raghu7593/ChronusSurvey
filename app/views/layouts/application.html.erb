@@ -26,8 +26,8 @@
         <nav class="navbar navbar-default" role="navigation">
           <div class="side-menu-container">
             <ul class="nav navbar-nav">
-              <li><a href="#"><span class="glyphicon glyphicon-send"></span><%= fa_icon "line-chart" %>&nbsp;&nbsp;New Survey</a></li>
-              <li data-dialog="creditsdialog"><a href="#"><span class="glyphicon glyphicon-send"></span><%= fa_icon "money" %>&nbsp;&nbsp;Credits</a></li>
+              <li><a href="#" class="cd-modal-call"><span class="glyphicon glyphicon-send"></span><%= fa_icon "line-chart" %>&nbsp;&nbsp;New Survey</a></li>
+              <li><a href="#" class="cd-modal-call"><span class="glyphicon glyphicon-send"></span><%= fa_icon "money" %>&nbsp;&nbsp;Credits</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </nav>
@@ -41,12 +41,11 @@
       </div>
     </div>
 
-    <div id="creditsdialog" class="dialog">
-      <div class="dialog__overlay"></div>
-      <div class="dialog__content">
+    <div class="cd-modal">
+      <div class="cd-modal-container">
+        <span class="cd-modal-header">Credits</span>
         <h2><strong>P. Naga Raghu Teja</strong></h2>
         <h3><%= mail_to "raghutejaparisa@gmail.com" %></h3>
-        <a data-dialog-close></a>
       </div>
     </div>
   </body>
