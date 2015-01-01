@@ -33,6 +33,7 @@
   text-align: center;
   position: relative;
   width: 90%;
+  min-height: 200px;
   max-width: 600px;
   background: #FFF;
   margin: 3em auto 4em;

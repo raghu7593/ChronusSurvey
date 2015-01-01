@@ -1,4 +1,6 @@
 ChronusSurvey::Application.routes.draw do
+  get "static_pages/credits"
+
   root to: "sessions#new"
   match "/auth/google_oauth2/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
