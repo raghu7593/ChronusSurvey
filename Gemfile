@@ -20,7 +20,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "twitter-bootstrap-rails"
+gem 'friendly_id'
+gem 'simple_form'
+gem 'twitter-bootstrap-rails'
 
 gem 'jquery-rails'
 gem 'haml'
