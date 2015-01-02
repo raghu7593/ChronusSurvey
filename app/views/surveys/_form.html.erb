@@ -1,6 +1,14 @@
-<%= simple_form_for @survey do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :public %>
-  <%= f.button :submit %>
+<%= form_for @survey, :html=> { class: "cd-modal-form" } do |f| %>
+  <p class="fieldset">
+    <%= f.text_field :title, :class => "full-width has-padding has-border", :placeholder => "Title" %>
+  </p>
+  <p class="fieldset">
+    <%= f.text_area :description, :class => "full-width has-padding has-border", :placeholder => "Description", :rows => 4 %>
+  </p>
+  <p class="fieldset">
+    <%= f.check_box :public %> Public?
+  </p>
+  <p class="fieldset">
+    <%= f.submit :submit, :class => "has-padding" %>
+  </p>
 <% end %>
