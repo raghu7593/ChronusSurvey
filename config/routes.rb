@@ -1,4 +1,14 @@
 ChronusSurvey::Application.routes.draw do
+  get "surveys/index"
+
+  get "surveys/new"
+
+  get "surveys/edit"
+
+  get "surveys/create"
+
+  get "surveys/update"
+
   get "static_pages/credits"
 
   root to: "sessions#new"
