@@ -7,6 +7,8 @@ favicon.ico: favicon.ico
 favicon/index.ico: favicon.ico
 google-login.png: google-login.png
 google-login/index.png: google-login.png
+modal-checkbox.png: modal-checkbox.png
+modal-checkbox/index.png: modal-checkbox.png
 rails.png: rails.png
 rails/index.png: rails.png
 application.js: application.js
