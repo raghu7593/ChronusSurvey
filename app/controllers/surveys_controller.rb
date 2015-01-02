@@ -4,6 +4,9 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
+    respond_to do |format|
+      format.js {render layout: false}
+    end
   end
 
   def edit
