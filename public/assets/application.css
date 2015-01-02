@@ -3444,11 +3444,6 @@ body {
   color: #505260;
   background-color: white;
 }
-
-a {
-  color: #2f889a;
-  text-decoration: none;
-}
 .cd-modal {
   position: fixed;
   top: 0;
@@ -3518,6 +3513,9 @@ a {
   color: #809191;
   font-size: 30px;
   font-weight: bold;
+}
+.cd-modal-data {
+  padding-top: 10px;
 }
 .nav {
   margin: 0 !important;
