@@ -25,8 +25,6 @@ gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 
 gem 'jquery-rails'
-gem 'haml'
-gem 'haml-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'font-awesome-rails'
