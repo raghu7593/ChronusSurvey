@@ -9,7 +9,8 @@
     <%= f.check_box :public, :class => "modal-checkbox" %>
     <label for="survey_public" class="modal-checkbox-label lite-gray-check">Public</label>
   </p>
+  <% submit_string = @survey.uid ? "Update Survey" : "Create Survey" %>
   <p class="fieldset">
-    <%= f.submit :submit, :class => "has-padding" %>
+    <%= f.submit :submit, :class => "has-padding", :value => submit_string %>
   </p>
 <% end %>
