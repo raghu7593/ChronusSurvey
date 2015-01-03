@@ -32,13 +32,18 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to static_pages_credits_path, :remote => true, :class => "cd-modal-call"  do %>
-                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "plus-square" %>&nbsp;&nbsp;Credits
+                <%= link_to surveys_path do %>
+                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "users" %>&nbsp;&nbsp;Public Surveys
                 <% end %>
               </li>
               <li>
                 <%= link_to static_pages_pricing_path, :remote => true, :class => "cd-modal-call"  do %>
                   <span class="glyphicon glyphicon-send"></span><%= fa_icon "money" %>&nbsp;&nbsp;Pricing
+                <% end %>
+              </li>
+              <li>
+                <%= link_to static_pages_credits_path, :remote => true, :class => "cd-modal-call"  do %>
+                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "plus-square" %>&nbsp;&nbsp;Credits
                 <% end %>
               </li>
             </ul>
