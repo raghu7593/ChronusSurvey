@@ -24,10 +24,12 @@ ActiveRecord::Schema.define(:version => 20150102053829) do
   create_table "surveys", :force => true do |t|
     t.string   "title"
     t.boolean  "public"
+    t.boolean  "login_required"
+    t.date     "end_date"
     t.text     "description"
     t.string   "uid"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end
