@@ -23,6 +23,7 @@ end
 gem 'friendly_id'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
 
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'

@@ -18,6 +18,7 @@ class SurveysController < ApplicationController
   end
 
   def create
+    params[:survey][:end_date] = Date.parse(params[:survey][:end_date])
     @survey = Survey.new(params[:survey])
     @survey.uid = SecureRandom.uuid
     @survey.save!
@@ -25,6 +26,7 @@ class SurveysController < ApplicationController
   end
 
   def update
+    params[:survey][:end_date] = Date.parse(params[:survey][:end_date])
     @survey = Survey.find_by_uid(params[:id])
     @survey.update_attributes!(params[:survey])
     redirect_to survey_path(@survey) and return
