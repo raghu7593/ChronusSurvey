@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  question_type: MyString
+  has_other_option: false
+  allow_comments: false
+
+two:
+  user_id: 1
+  question_type: MyString
+  has_other_option: false
+  allow_comments: false
