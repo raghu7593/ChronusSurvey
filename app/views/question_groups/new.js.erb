@@ -1,0 +1,7 @@
+<% if @question_group.nil? %>
+  $('.cd-modal-header').html('Choose a Question Type');
+  $('.cd-modal-data').html('<%= j(render :partial => "questions_type_list") %>');
+<% else %>
+  $('.cd-modal-header').html('Add a New Question');
+  $('.cd-modal-data').html('<%= j(render :partial => "form") %>');
+<% end %>

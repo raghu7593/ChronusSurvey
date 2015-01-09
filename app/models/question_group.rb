@@ -5,9 +5,23 @@ class QuestionGroup < ActiveRecord::Base
 
   module Type
     TEXT = "text"
+    MULTIPLECHOICE = "multiple_choice"
+    TICKBOX = "tick_box"
+    SCALE = "scale"
+    GRID = "grid"
 
     def self.all
-      [TEXT]
+      [TEXT, MULTIPLECHOICE, TICKBOX, SCALE, GRID]
+    end
+
+    def self.logos
+    	{
+    		:text => "paragraph",
+    		:multiple_choice => "dot-circle-o",
+    		:tick_box => "check-square-o",
+    		:scale => "star",
+    		:grid => "calendar"
+    	}
     end
   end
 end
