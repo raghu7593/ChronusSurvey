@@ -30,7 +30,8 @@ ActiveRecord::Schema.define(:version => 20150109101817) do
 
   create_table "question_groups", :force => true do |t|
     t.integer  "user_id"
-    t.string   "question_type"
+    t.integer  "uid"
+    t.string   "type"
     t.boolean  "has_other_option"
     t.boolean  "allow_comments"
     t.datetime "created_at",       :null => false
