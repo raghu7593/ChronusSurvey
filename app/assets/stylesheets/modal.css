@@ -123,7 +123,17 @@
   margin: 0;
   padding: 0;
   border-radius: 0.25em;
+}
+.cd-modal-form input.full-width {
   width: 93%;
+}
+.cd-modal-form input.full-width-with-delete {
+  width: 85%;
+}
+.modal-input-delete-button {
+  vertical-align: middle;
+  padding-left: 10px;
+  color: #809191;
 }
 .cd-modal-form textarea {
   margin: 0;

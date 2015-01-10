@@ -2,6 +2,6 @@
   $('.cd-modal-header').html('Choose a Question Type');
   $('.cd-modal-data').html('<%= j(render :partial => "questions_type_list") %>');
 <% else %>
-  $('.cd-modal-header').html('<%= j(link_to (fa_icon "arrow-left", :class => "modal-header-go-back"), new_question_group_path, :remote => true, :class => "cd-modal-call") %>Add a new <%= question_type_to_text(@question_group.type) %> question');
+  $('.cd-modal-header').html('<%= j(link_to (fa_icon "arrow-left", :class => "modal-header-go-back"), new_question_group_path, :remote => true, :class => "cd-modal-call") %>Add a new <%= question_type_to_text(@question_group.question_type) %> question');
   $('.cd-modal-data').html('<%= j(render :partial => "form") %>');
 <% end %>
