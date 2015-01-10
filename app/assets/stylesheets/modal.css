@@ -207,3 +207,14 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
 .cd-modal-form label.modal-checkbox-label {
   background-image:url('modal-checkbox.png');
 }
+
+.modal-header-go-back {
+  float: left;
+  padding: 16px 16px 16px 16px;
+  color: #809191;
+  background-color: rgb(197, 197, 197);
+}
+
+.modal-header-go-back:hover {
+  background-color: rgb(182, 182, 182);
+}

@@ -1,1 +1,25 @@
-Hello
+<%= form_for @question_group, :html=> { class: "cd-modal-form" } do |f| %>
+  <p class="fieldset">
+    <%= text_field_tag 'titles[]', nil, :class => "full-width has-padding has-border", :placeholder => "Title" %>
+  </p>
+  <span id="more_titles"></span>
+  <span><%= link_to_function 'Add a new Title', 'QuestionGroup.addNewTitle();' %></span>
+  <p class="fieldset">
+    <%= f.check_box :allow_comments, :class => "modal-checkbox" %>
+    <label for="question_group_allow_comments" class="modal-checkbox-label lite-gray-check">Allow Comments</label>
+    <% if (@question_group.type == QuestionGroup::Type::MULTIPLECHOICE) || (@question_group.type == QuestionGroup::Type::TICKBOX) %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.check_box :has_other_option, :class => "modal-checkbox" %>
+      <label for="question_group_has_other_option" class="modal-checkbox-label lite-gray-check">Allow Other Option</label>
+    <% end %>
+  </p>
+  <% if (@question_group.type == QuestionGroup::Type::MULTIPLECHOICE) || (@question_group.type == QuestionGroup::Type::TICKBOX) || (@question_group.type == QuestionGroup::Type::GRID) %>
+    <p class="fieldset">
+      <%= text_field_tag 'options[]', nil, :class => "full-width has-padding has-border", :placeholder => "Option" %>
+    </p>
+    <span id="more_options"></span>
+  <% end %>
+  <p class="fieldset">
+    <%= f.submit :submit, :class => "has-padding", :value => "Submit" %>
+  </p>
+<% end %>

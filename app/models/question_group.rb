@@ -24,4 +24,7 @@ class QuestionGroup < ActiveRecord::Base
     	}
     end
   end
+
+  has_many :questions
+  has_many :options
 end
