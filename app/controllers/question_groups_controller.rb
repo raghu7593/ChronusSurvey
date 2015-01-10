@@ -9,9 +9,10 @@ class QuestionGroupsController < ApplicationController
   end
 
   def create
+    @survey = Survey.find_by_uid(params[:survey_id])
     question_type = params[:question_group][:question_type]
     if question_type && QuestionGroup::Type.all.include?(question_type)
-      @question_group = QuestionGroup.new(params[:question_group])
+      @question_group = @survey.question_groups.new(params[:question_group])
       if (question_type == QuestionGroup::Type::GRID) && (params[:titles].size > 0)
         params[:titles].each do |title|
           @question_group.questions.build(:title => title)
@@ -27,6 +28,6 @@ class QuestionGroupsController < ApplicationController
       @question_group.uid = SecureRandom.hex(5)
       @question_group.save!
     end
-
+    redirect_to survey_path(@survey) and return
   end
 end
