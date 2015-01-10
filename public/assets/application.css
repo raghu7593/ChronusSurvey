@@ -4081,7 +4081,17 @@ body {
   margin: 0;
   padding: 0;
   border-radius: 0.25em;
+}
+.cd-modal-form input.full-width {
   width: 93%;
+}
+.cd-modal-form input.full-width-with-delete {
+  width: 85%;
+}
+.modal-input-delete-button {
+  vertical-align: middle;
+  padding-left: 10px;
+  color: #809191;
 }
 .cd-modal-form textarea {
   margin: 0;
@@ -4164,6 +4174,17 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
 
 .cd-modal-form label.modal-checkbox-label {
   background-image:url('modal-checkbox.png');
+}
+
+.modal-header-go-back {
+  float: left;
+  padding: 16px 16px 16px 16px;
+  color: #809191;
+  background-color: rgb(197, 197, 197);
+}
+
+.modal-header-go-back:hover {
+  background-color: rgb(182, 182, 182);
 }
 .nav {
   margin: 0 !important;

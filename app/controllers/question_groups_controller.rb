@@ -1,7 +1,8 @@
 class QuestionGroupsController < ApplicationController
   def new
+    @survey = Survey.find_by_uid(params[:survey_id])
     if params[:question_type] && QuestionGroup::Type.all.include?(params[:question_type])
-      @question_group = QuestionGroup.new(:question_type => params[:question_type])
+      @question_group = @survey.question_groups.new(:question_type => params[:question_type])
     else
       @question_type_with_logos = QuestionGroup::Type.logos
     end

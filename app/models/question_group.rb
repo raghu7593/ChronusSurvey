@@ -27,4 +27,5 @@ class QuestionGroup < ActiveRecord::Base
 
   has_many :questions
   has_many :options
+  belongs_to :survey
 end

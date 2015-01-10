@@ -1,3 +1,3 @@
 <% @question_type_with_logos.each do |question_type, logo| %>
-  <%= fa_icon logo %>&nbsp;<%= link_to question_type, new_question_group_path(:question_type => question_type), :remote => true, :class => "cd-modal-call" %>&nbsp;&nbsp;
+  <%= fa_icon logo %>&nbsp;<%= link_to question_type, new_survey_question_group_path(@survey, :question_type => question_type), :remote => true, :class => "cd-modal-call" %>&nbsp;&nbsp;
 <% end %>
