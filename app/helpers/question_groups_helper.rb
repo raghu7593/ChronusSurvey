@@ -15,4 +15,14 @@ module QuestionGroupsHelper
       ""
     end
   end
+
+  def render_question_group_preview(question_group)
+    content = ""
+    if(question_group.type == QuestionGroup::Type::GRID)
+      
+    else
+      
+    end
+    content << tag(:hr)
+  end
 end

@@ -4,3 +4,7 @@ body {
   color: #505260;
   background-color: white;
 }
+
+hr {
+  border: 1px solid #d4d4d4;
+}
