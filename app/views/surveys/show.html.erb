@@ -1,4 +1,4 @@
 <%= link_to "Edit", edit_survey_path(@survey), :remote => true, :class => "cd-modal-call" %>
 <%= link_to "Add a new Question", new_survey_question_group_path(@survey), :remote => true, :class => "cd-modal-call" %>
 <hr />
-<%= render_question_group_preview(@survey.question_group.first) %>
+<%= render_question_group_preview(@survey.question_groups.first) if !@survey.question_groups.empty? %>

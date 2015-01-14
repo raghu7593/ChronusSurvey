@@ -8,6 +8,11 @@ class QuestionGroupsController < ApplicationController
     end
   end
 
+  def edit
+    @survey = Survey.find_by_uid(params[:survey_id])
+    @question_group = QuestionGroup.find(params[:id])
+  end
+
   def create
     @survey = Survey.find_by_uid(params[:survey_id])
     question_type = params[:question_group][:question_type]

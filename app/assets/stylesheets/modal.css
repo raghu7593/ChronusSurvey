@@ -69,6 +69,8 @@
 }
 .cd-modal-data {
   padding: 20px;
+  max-height: 465px;
+  overflow-y: auto;
 }
 
 .cd-modal-form {

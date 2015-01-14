@@ -17,12 +17,6 @@ module QuestionGroupsHelper
   end
 
   def render_question_group_preview(question_group)
-    content = ""
-    if(question_group.type == QuestionGroup::Type::GRID)
-      
-    else
-      
-    end
-    content << tag(:hr)
+    edit_survey_question_group_path(question_group)
   end
 end
