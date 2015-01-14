@@ -24,7 +24,7 @@ gem 'friendly_id'
 gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
-
+gem 'populator'
 gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'

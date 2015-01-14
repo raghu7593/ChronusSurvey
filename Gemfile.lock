@@ -93,6 +93,7 @@ GEM
       omniauth (~> 1.2)
     pg (0.12.2)
     polyglot (0.3.5)
+    populator (1.0.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -160,6 +161,7 @@ DEPENDENCIES
   mysql2
   omniauth-google-oauth2
   pg (= 0.12.2)
+  populator
   rails (= 3.2.18)
   sass-rails (~> 3.2.3)
   simple_form
