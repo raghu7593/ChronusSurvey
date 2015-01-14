@@ -17221,7 +17221,7 @@ window.Modernizr = (function( window, document, undefined ) {
 })(this, this.document);
 var QuestionGroup = {
   addNewTitle: function (){
-    var new_title = '<p class="fieldset"><input class="full-width-with-delete has-padding has-border" id="titles_" name="titles[]" placeholder="Title" type="text"><a class="delete-title" href="#"><i class="fa fa-close fa-2x modal-input-delete-button"></i></a></p>'
+    var new_title = '<p class="fieldset"><input class="full-width-with-additional-option has-padding has-border" id="titles_" name="titles[]" placeholder="Title" type="text"><a class="delete-title" href="#"><i class="fa fa-close fa-2x modal-input-extra-button"></i></a></p>'
     $("#more_titles").append(new_title);
     QuestionGroup.deleteTitle();
   },
@@ -17233,7 +17233,7 @@ var QuestionGroup = {
   },
 
   addNewOption: function (){
-    var new_title = '<p class="fieldset"><input class="full-width-with-delete has-padding has-border" id="options_" name="options[]" placeholder="Option" type="text"><a class="delete-option" href="#"><i class="fa fa-close fa-2x modal-input-delete-button"></i></a></p>'
+    var new_title = '<p class="fieldset"><input class="full-width-with-additional-option has-padding has-border" id="options_" name="options[]" placeholder="Option" type="text"><a class="delete-option" href="#"><i class="fa fa-close fa-2x modal-input-extra-button"></i></a></p>'
     $("#more_options").append(new_title);
     QuestionGroup.deleteOption();
   },

@@ -127,10 +127,10 @@
 .cd-modal-form input.full-width {
   width: 93%;
 }
-.cd-modal-form input.full-width-with-delete {
-  width: 85%;
+.cd-modal-form input.full-width-with-additional-option {
+  width: 84%;
 }
-.modal-input-delete-button {
+.modal-input-extra-button {
   vertical-align: middle;
   padding-left: 10px;
   color: #809191;
