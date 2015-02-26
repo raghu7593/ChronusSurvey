@@ -27,6 +27,11 @@
           <div class="side-menu-container">
             <ul class="nav navbar-nav">
               <li>
+                <%= link_to new_survey_path, :remote => true, :class => "cd-modal-call"  do %>
+                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "line-chart" %>&nbsp;&nbsp;New Survey
+                <% end %>
+              </li>
+              <li>
                 <%= link_to static_pages_pricing_path, :remote => true, :class => "cd-modal-call"  do %>
                   <span class="glyphicon glyphicon-send"></span><%= fa_icon "money" %>&nbsp;&nbsp;Pricing
                 <% end %>

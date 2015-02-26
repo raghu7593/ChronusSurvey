@@ -1,0 +1,22 @@
+<%= form_for @survey, :html=> { class: "cd-modal-form" } do |f| %>
+  <p class="fieldset">
+    <%= f.text_field :title, :class => "full-width has-padding has-border", :placeholder => "Title" %>
+  </p>
+  <p class="fieldset">
+    <%= f.text_area :description, :class => "full-width has-padding has-border", :placeholder => "Description", :rows => 4 %>
+  </p>
+  <p class="fieldset">
+    <%= f.text_field :end_date, :class => "full-width has-padding has-border", :placeholder => "End Date", :data => {:provide => "datepicker", "date-format" => "yyyy-mm-dd", "date-autoclose" => "true"} %>
+  </p>
+  <p class="fieldset">
+    <%= f.check_box :public, :class => "modal-checkbox" %>
+    <label for="survey_public" class="modal-checkbox-label lite-gray-check">Public</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.check_box :login_required, :class => "modal-checkbox" %>
+    <label for="survey_login_required" class="modal-checkbox-label lite-gray-check">Login Required</label>
+  </p>
+  <% submit_string = @survey.uid ? "Update Survey" : "Create Survey" %>
+  <p class="fieldset">
+    <%= f.submit :submit, :class => "has-padding", :value => submit_string %>
+  </p>
+<% end %>
