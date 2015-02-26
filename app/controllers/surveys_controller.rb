@@ -34,5 +34,6 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find_by_uid(params[:id])
+    @question_groups = @survey.question_groups
   end
 end

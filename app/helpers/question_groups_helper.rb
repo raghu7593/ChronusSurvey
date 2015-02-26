@@ -15,4 +15,8 @@ module QuestionGroupsHelper
       ""
     end
   end
+
+  def render_question_group_preview(question_group)
+    edit_survey_question_group_path(question_group)
+  end
 end

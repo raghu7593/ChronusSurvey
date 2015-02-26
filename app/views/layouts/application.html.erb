@@ -13,8 +13,8 @@
         <div class="container">
           <a class="brand" href="#"><%= image_tag asset_path("cs.png") %></a>
           <% if current_user %>
-            <%= link_to "Log out", logout_path, :class => "brand nav-pull-right nav-pull-bottom" %>
-            <a class="brand nav-pull-right nav-pull-bottom" href="#"><%= current_user.name %></a>
+            <%= link_to "Logout", logout_path, :class => "brand nav-pull-right nav-pull-bottom" %>
+            <a class="brand nav-pull-right nav-pull-bottom" href="#"><%= current_user.name.split.map(&:capitalize).join(' ') %></a>
           <% else %>
             <a class="brand nav-pull-right" href="/auth/google_oauth2"><%= image_tag asset_path("google-login.png") %></a>
           <% end %>
@@ -26,16 +26,6 @@
         <nav class="navbar navbar-default" role="navigation">
           <div class="side-menu-container">
             <ul class="nav navbar-nav">
-              <li>
-                <%= link_to new_survey_path, :remote => true, :class => "cd-modal-call"  do %>
-                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "line-chart" %>&nbsp;&nbsp;New Survey
-                <% end %>
-              </li>
-              <li>
-                <%= link_to surveys_path do %>
-                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "users" %>&nbsp;&nbsp;Public Surveys
-                <% end %>
-              </li>
               <li>
                 <%= link_to static_pages_pricing_path, :remote => true, :class => "cd-modal-call"  do %>
                   <span class="glyphicon glyphicon-send"></span><%= fa_icon "money" %>&nbsp;&nbsp;Pricing
