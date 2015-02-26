@@ -2,12 +2,8 @@
 
 one:
   title: MyString
-  public: false
   description: MyText
-  uid: MyString
 
 two:
   title: MyString
-  public: false
   description: MyText
-  uid: MyString
