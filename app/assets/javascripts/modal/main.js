@@ -12,8 +12,12 @@ jQuery(document).ready(function($){
 		}
 	});
 	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$modal.removeClass('is-visible');
-	    }
-    });
+  	if(event.which=='27'){
+  		$modal.removeClass('is-visible');
+    }
+  });
+	$(".clear-modal").click(function() {
+	  $('.cd-modal-header').html('');
+	  $('.cd-modal-data').html('');
+	});
 });
