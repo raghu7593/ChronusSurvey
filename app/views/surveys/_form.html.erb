@@ -1,4 +1,4 @@
-<%= form_for @survey, :html=> { class: "cd-modal-form" } do |f| %>
+<%= form_for @survey, :html=> { :class => "cd-modal-form survey-form" } do |f| %>
   <p class="fieldset">
     <%= f.text_field :title, :class => "full-width has-padding has-border", :placeholder => "Title" %>
   </p>
