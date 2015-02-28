@@ -15794,23 +15794,27 @@ return jQuery;
 
 }).call(this);
 jQuery(document).ready(function($){
-	var $modal = $('.cd-modal'),
-		$main_nav = $('.cd-modal-call');
+  var $modal = $('.cd-modal'),
+    $main_nav = $('.cd-modal-call');
 
-	$main_nav.on('click', function(event){
-		$modal.addClass('is-visible');	
-	});
+  $main_nav.on('click', function(event){
+    $modal.addClass('is-visible');  
+  });
 
-	$modal.on('click', function(event){
-		if( $(event.target).is($modal) || $(event.target).is('.cd-close-form') ) {
-			$modal.removeClass('is-visible');
-		}
-	});
-	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$modal.removeClass('is-visible');
-	    }
-    });
+  $modal.on('click', function(event){
+    if( $(event.target).is($modal) || $(event.target).is('.cd-close-form') ) {
+      $modal.removeClass('is-visible');
+    }
+  });
+  $(document).keyup(function(event){
+    if(event.which=='27'){
+      $modal.removeClass('is-visible');
+    }
+  });
+  $(".clear-modal").click(function() {
+    $('.cd-modal-header').html('');
+    $('.cd-modal-data').html('<img class="loading" src="/assets/loading.gif" />');
+  });
 });
 /*!
  * Modernizr v2.7.1
@@ -17219,40 +17223,29 @@ window.Modernizr = (function( window, document, undefined ) {
     return Modernizr;
 
 })(this, this.document);
-var QuestionGroup = {
-  addNewTitle: function (){
-    var new_title = '<p class="fieldset"><input class="full-width-with-additional-option has-padding has-border" id="titles_" name="titles[]" placeholder="Title" type="text"><a class="delete-title" href="#"><i class="fa fa-close fa-2x modal-input-extra-button"></i></a></p>'
-    $("#more_titles").append(new_title);
-    QuestionGroup.deleteTitle();
-  },
-
-  deleteTitle: function (){
-    $("a.delete-title").click(function (event) {
-      $(this).parent().remove()
+var Surveys = {
+  validateSurveyForm: function(){
+    var survey_title = $("#survey_title")
+    survey_title.change(function () {
+      if(survey_title.val() == "") {
+        survey_title.addClass("input-error");
+      }
+      else {
+        survey_title.removeClass("input-error");
+      }
     });
-  },
-
-  addNewOption: function (){
-    var new_title = '<p class="fieldset"><input class="full-width-with-additional-option has-padding has-border" id="options_" name="options[]" placeholder="Option" type="text"><a class="delete-option" href="#"><i class="fa fa-close fa-2x modal-input-extra-button"></i></a></p>'
-    $("#more_options").append(new_title);
-    QuestionGroup.deleteOption();
-  },
-
-  deleteOption: function (){
-    $("a.delete-option").click(function (event) {
-      $(this).parent().remove()
+    $(".survey-form").on('submit', function (event) {
+      if(survey_title.val() == "") {
+        survey_title.addClass("input-error");
+        return false;
+      }
+      else {
+        return true;
+      }
     });
   }
 }
 ;
-(function() {
-
-
-}).call(this);
-(function() {
-
-
-}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

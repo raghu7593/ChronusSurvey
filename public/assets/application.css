@@ -3956,6 +3956,18 @@ body {
   color: #505260;
   background-color: white;
 }
+
+hr {
+  border: 1px solid #d4d4d4;
+}
+
+.non-resizable {
+  resize: none;
+}
+
+.input-error {
+  border: 1px solid #CA0000 !important;
+}
 .cd-modal {
   position: fixed;
   top: 0;
@@ -4027,6 +4039,8 @@ body {
 }
 .cd-modal-data {
   padding: 20px;
+  max-height: 465px;
+  overflow-y: auto;
 }
 
 .cd-modal-form {
@@ -4185,6 +4199,10 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
 
 .modal-header-go-back:hover {
   background-color: rgb(182, 182, 182);
+}
+
+.loading {
+  height: 45px;
 }
 .nav {
   margin: 0 !important;
