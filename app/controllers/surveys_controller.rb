@@ -18,15 +18,15 @@ class SurveysController < ApplicationController
   end
 
   def create
-    params[:survey][:end_date] = Date.parse(params[:survey][:end_date])
+    params[:survey][:end_date] = Date.parse(params[:survey][:end_date]) if params[:survey][:end_date].present?
     @survey = Survey.new(params[:survey])
-    @survey.uid = SecureRandom.hex(5)
+    @survey.uid = generate_secure_random
     @survey.save!
     redirect_to survey_path(@survey) and return
   end
 
   def update
-    params[:survey][:end_date] = Date.parse(params[:survey][:end_date])
+    params[:survey][:end_date] = Date.parse(params[:survey][:end_date]) if params[:survey][:end_date].present?
     @survey = Survey.find_by_uid(params[:id])
     @survey.update_attributes!(params[:survey])
     redirect_to survey_path(@survey) and return
@@ -35,5 +35,14 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find_by_uid(params[:id])
     @question_groups = @survey.question_groups
+  end
+
+  private
+  def generate_secure_random
+    random_string = nil
+    while !random_string.nil?
+      random_string = SecureRandom.hex(5)
+      random_string = nil if Survey.find_by_uid(random_string)
+    end
   end
 end

@@ -12,3 +12,7 @@ hr {
 .non-resizable {
   resize: none;
 }
+
+.input-error {
+  border: 1px solid #CA0000 !important;
+}
