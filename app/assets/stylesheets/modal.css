@@ -230,3 +230,7 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
 .modal-header-go-back:hover {
   background-color: rgb(182, 182, 182);
 }
+
+.loading {
+  height: 45px;
+}
