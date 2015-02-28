@@ -4,7 +4,6 @@ class SurveysController < ApplicationController
   end
 
   def new
-    sleep 3
     @survey = Survey.new
     respond_to do |format|
       format.js {render layout: false}
