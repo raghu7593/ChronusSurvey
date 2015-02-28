@@ -3,10 +3,10 @@
     <%= f.text_field :title, :class => "full-width has-padding has-border", :placeholder => "Title" %>
   </p>
   <p class="fieldset">
-    <%= f.text_area :description, :class => "full-width has-padding has-border", :placeholder => "Description", :rows => 4 %>
+    <%= f.text_area :description, :class => "full-width has-padding has-border non-resizable", :placeholder => "Description", :rows => 4 %>
   </p>
   <p class="fieldset">
-    <%= f.text_field :end_date, :class => "full-width has-padding has-border", :placeholder => "End Date", :data => {:provide => "datepicker", "date-format" => "yyyy-mm-dd", "date-autoclose" => "true"} %>
+    <%= f.text_field :end_date, :class => "full-width has-padding has-border", :placeholder => "End Date", :readonly => "", :data => {:provide => "datepicker", "date-format" => "yyyy-mm-dd", "date-autoclose" => "true", "date-start-date" => Time.now.strftime("%Y-%m-%d") } %>
   </p>
   <p class="fieldset">
     <%= f.check_box :public, :class => "modal-checkbox" %>
