@@ -1,0 +1,10 @@
+<%= form_for [@survey, @section], :html=> { :class => "cd-modal-form section-form" } do |f| %>
+  <p class="fieldset">
+    <%= f.text_field :title, :class => "full-width has-padding has-border", :placeholder => "Title" %>
+  </p>
+  <br/>
+  <% submit_string = @section.id ? "Update Section" : "Create Section" %>
+  <p class="fieldset">
+    <%= f.submit :submit, :class => "has-padding", :value => submit_string %>
+  </p>
+<% end %>

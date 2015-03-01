@@ -1,3 +1,5 @@
-<div class="container">
-  <%= link_to "Edit", edit_survey_path(@survey), :remote => true, :class => "cd-modal-call btn pull-right" %>
+<div class="btn-group pull-right" role="group">
+  <%= link_to "New Section", new_survey_section_path(@survey), :remote => true, :class => "cd-modal-call btn" %>
+  <%= link_to "Edit", edit_survey_path(@survey), :remote => true, :class => "cd-modal-call btn" %>
+  <%= link_to "Delete", edit_survey_path(@survey), :remote => true, :class => "cd-modal-call btn" %>
 </div>
