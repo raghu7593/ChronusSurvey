@@ -3,6 +3,8 @@ jQuery(document).ready(function($){
     $main_nav = $('.cd-modal-call');
 
   $main_nav.on('click', function(event){
+    $('.cd-modal-header').html('');
+    $('.cd-modal-data').html('<img class="loading" src="/assets/loading.gif" />');
     $modal.addClass('is-visible');  
   });
 
@@ -11,10 +13,6 @@ jQuery(document).ready(function($){
       $modal.removeClass('is-visible');
     }
   });
-  $(".clear-modal").click(function() {
-    $('.cd-modal-header').html('');
-    $('.cd-modal-data').html('<img class="loading" src="/assets/loading.gif" />');
-  });
 
   $('.cd-popup-trigger').on('click', function(event){
     event.preventDefault();
@@ -22,6 +20,7 @@ jQuery(document).ready(function($){
     $('.cd-popup-delete-action').attr('href', $(this).attr('href'));
     $('.cd-popup').addClass('is-visible');
   });
+
   $('.cd-popup').on('click', function(event){
     if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') || $(event.target).is('.cd-popup-no-action') ) {
       event.preventDefault();
