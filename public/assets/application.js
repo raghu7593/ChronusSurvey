@@ -15818,7 +15818,7 @@ jQuery(document).ready(function($){
     $('.cd-popup').addClass('is-visible');
   });
   $('.cd-popup').on('click', function(event){
-    if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+    if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') || $(event.target).is('.cd-popup-no-action') ) {
       event.preventDefault();
       $(this).removeClass('is-visible');
     }
