@@ -36,6 +36,12 @@ class SurveysController < ApplicationController
     @survey = Survey.find_by_uid(params[:id])
   end
 
+  def destroy
+    @survey = Survey.find_by_uid(params[:id])
+    @survey.destroy if @survey
+    redirect_to root_path
+  end
+
   private
   def generate_secure_random
     random_string = nil

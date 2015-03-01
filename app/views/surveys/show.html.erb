@@ -1,5 +1,5 @@
 <div class="btn-group pull-right" role="group">
   <%= link_to "New Section", new_survey_section_path(@survey), :remote => true, :class => "cd-modal-call btn" %>
   <%= link_to "Edit", edit_survey_path(@survey), :remote => true, :class => "cd-modal-call btn" %>
-  <%= link_to "Delete", edit_survey_path(@survey), :remote => true, :class => "cd-modal-call btn" %>
+  <%= link_to "Delete", @survey, data: { message: "Are you sure you want to delete this Survey?"}, :class => "btn cd-popup-trigger" %>
 </div>

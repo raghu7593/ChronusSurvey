@@ -15806,14 +15806,30 @@ jQuery(document).ready(function($){
       $modal.removeClass('is-visible');
     }
   });
-  $(document).keyup(function(event){
-    if(event.which=='27'){
-      $modal.removeClass('is-visible');
-    }
-  });
   $(".clear-modal").click(function() {
     $('.cd-modal-header').html('');
     $('.cd-modal-data').html('<img class="loading" src="/assets/loading.gif" />');
+  });
+
+  $('.cd-popup-trigger').on('click', function(event){
+    event.preventDefault();
+    $('.cd-popup-data').html($(this).data().message);
+    $('.cd-popup-delete-action').attr('href', $(this).attr('href'));
+    $('.cd-popup').addClass('is-visible');
+  });
+  $('.cd-popup').on('click', function(event){
+    if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+
+  // Esc key function
+  $(document).keyup(function(event){
+    if(event.which=='27'){
+      $modal.removeClass('is-visible');
+      $('.cd-popup').removeClass('is-visible');
+    }
   });
 });
 /*!
