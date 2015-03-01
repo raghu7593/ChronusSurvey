@@ -8,6 +8,11 @@ class SectionsController < ApplicationController
     end
   end
 
+  def create
+    @section = @survey.sections.create!(params[:section])
+    redirect_to survey_path(@survey) and return
+  end
+
   protected
   def find_survey
     @survey = Survey.find_by_uid(params[:survey_id])
