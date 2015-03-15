@@ -15,7 +15,7 @@
       <%= link_to survey_section_path(@survey, section), data: { message: "Are you sure you want to delete this Section?"}, :class => "cd-popup-trigger"  do %>
         <span class="glyphicon glyphicon-send"></span><%= fa_icon "trash-o" %>
       <% end %>&nbsp;
-      <%= link_to new_survey_section_question_path(@survey, section), :remote => true, :class => "cd-modal-call"  do %>
+      <%= link_to new_survey_section_question_group_path(@survey, section), :remote => true, :class => "cd-modal-call"  do %>
         <span class="glyphicon glyphicon-send"></span><%= fa_icon "plus" %>
       <% end %>&nbsp;
     </h3>
