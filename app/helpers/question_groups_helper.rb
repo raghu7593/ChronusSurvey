@@ -1,16 +1,16 @@
 module QuestionGroupsHelper
-  def question_type_to_text(type)
-    case type
+  def question_type_to_text(question_type)
+    case question_type
+    when QuestionGroup::Type::STRING
+      "string"
     when QuestionGroup::Type::TEXT
       "text"
-    when QuestionGroup::Type::MULTIPLECHOICE
-      "multiple choice"
-    when QuestionGroup::Type::TICKBOX
-      "tick box"
-    when QuestionGroup::Type::SCALE
-      "scale"
-    when QuestionGroup::Type::GRID
-      "grid"
+    when QuestionGroup::Type::SINGLE_CHOICE
+      "single choice"
+    when QuestionGroup::Type::MULTI_CHOICE
+      "multi choice"
+    when QuestionGroup::Type::RATING
+      "rating"
     else
       ""
     end

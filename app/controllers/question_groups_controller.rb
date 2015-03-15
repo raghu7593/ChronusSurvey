@@ -2,10 +2,11 @@ class QuestionGroupsController < ApplicationController
   before_filter :find_question_group
 
   def new
-    if params[:question_type]
-      @question_group = @section.question_groups.new(:question_type => params[:question_type])
+    question_type = params[:question_type]
+    if question_type && QuestionGroup::Type.all.include?(QuestionGroup::Type.question_type_conversion[question_type.to_sym])
+      @question_group = @section.question_groups.new(:question_type => QuestionGroup::Type.question_type_conversion[question_type.to_sym])
     else
-      
+      @question_type_with_logos = QuestionGroup::Type.logos
     end
     respond_to do |format|
       format.js {render layout: false}
