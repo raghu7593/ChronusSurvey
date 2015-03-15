@@ -4,6 +4,9 @@ ChronusSurvey::Application.routes.draw do
   resources :surveys, :path => 'surveys'
   resources :surveys, :path => 'surveys', :only => [] do
     resources :sections, :path => 'sections'
+    resources :sections, :path => 'sections', :only => [] do
+      resources :questions, :path => 'questions'
+    end
   end
   root to: "sessions#new"
   match "/auth/google_oauth2/callback", to: "sessions#create"
