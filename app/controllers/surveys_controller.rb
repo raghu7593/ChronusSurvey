@@ -34,6 +34,7 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find_by_uid(params[:id])
+    @sections = @survey.sections
   end
 
   def destroy
