@@ -19,6 +19,6 @@ class QuestionGroupsController < ApplicationController
     unless @survey
       redirect_to root_path
     end
-    @section = @survey.sections.find(params[:survey_id])
+    @section = @survey.sections.find(params[:section_id])
   end
 end
