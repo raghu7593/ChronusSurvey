@@ -4672,3 +4672,9 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
     margin: 0;
   }
 }
+.question-type-with-logos {
+  margin-top: 30px;
+}
+.sections-main-content {
+  padding-top: 20px;
+}
