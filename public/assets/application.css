@@ -14,6 +14,10 @@
 
  */
 
+
+@import "bootstrap";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
