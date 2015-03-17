@@ -31,6 +31,7 @@ gem 'figaro'
 gem 'font-awesome-rails'
 gem 'bower-rails'
 
+gem 'heroku'
 gem "foreman"
 group :production, :staging do
   gem "rails_12factor"
