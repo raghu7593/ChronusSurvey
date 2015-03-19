@@ -11,6 +11,7 @@ gem 'mysql2'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'sass', '3.2.13'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
@@ -30,6 +31,12 @@ gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'font-awesome-rails'
+
+group :production, :staging do
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
