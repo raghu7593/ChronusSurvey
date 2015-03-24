@@ -8,3 +8,4 @@
 
 #####March 24, 2014
 - [ ] SQL [Survey Query Language]
+- [ ] Flash Messages [http://alertifyjs.com/]
