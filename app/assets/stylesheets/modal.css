@@ -382,7 +382,10 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
   line-height: 4;
   text-decoration: none !important;
   font-size: 24px;
-  font-weight: 700
+  font-weight: 700;
+  border: 1px solid #CCC;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .social-media a.facebook {
