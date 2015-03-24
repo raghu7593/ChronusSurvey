@@ -370,3 +370,69 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
   color: transparent;
   white-space: nowrap;
 }
+
+/* Contact Me Modal */
+.span2_5 {
+  width: 235px;
+}
+
+.social-media a {
+  height: 100px;
+  display: block;
+  line-height: 4;
+  text-decoration: none !important;
+  font-size: 24px;
+  font-weight: 700
+}
+
+.social-media a.facebook {
+  color: #3b579d
+}
+
+.social-media a.facebook:hover {
+  color: #fff;
+  background-color: #3b579d;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in
+}
+
+.social-media a.twitter {
+  color: #4cd3ff
+}
+
+.social-media a.twitter:hover {
+  color: #fff;
+  background-color: #4cd3ff;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in
+}
+
+.social-media a.google {
+  color: #e0191a
+}
+
+.social-media a.google:hover {
+  color: #fff;
+  background-color: #e0191a;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in
+}
+
+.social-media a.linkedin {
+  color: #153047
+}
+
+.social-media a.linkedin:hover {
+  color: #fff;
+  background-color: #153047;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in
+}

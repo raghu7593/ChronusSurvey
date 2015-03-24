@@ -1,7 +1,7 @@
 ChronusSurvey::Application.routes.draw do
   get "static_pages/credits"
   get "static_pages/pricing"
-  get "static_pages/contact_me"
+  get "static_pages/contact"
   resources :surveys, :path => 'surveys'
   resources :surveys, :path => 'surveys', :only => [] do
     resources :sections, :path => 'sections'
