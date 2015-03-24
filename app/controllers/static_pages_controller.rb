@@ -10,4 +10,10 @@ class StaticPagesController < ApplicationController
       format.js {render layout: false}
     end
   end
+
+  def contact_me
+    respond_to do |format|
+      format.js {render layout: false}
+    end
+  end
 end

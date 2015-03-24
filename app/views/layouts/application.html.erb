@@ -41,6 +41,11 @@
                   <span class="glyphicon glyphicon-send"></span><%= fa_icon "plus-square" %>&nbsp;&nbsp;Credits
                 <% end %>
               </li>
+              <li>
+                <%= link_to static_pages_contact_me_path, :remote => true, :class => "cd-modal-call"  do %>
+                  <span class="glyphicon glyphicon-send"></span><%= fa_icon "comments" %>&nbsp;&nbsp;Contact Me
+                <% end %>
+              </li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </nav>
