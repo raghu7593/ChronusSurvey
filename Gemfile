@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'font-awesome-rails'
+gem 'rack-zippy'
 
 group :production, :staging do
   gem "rails_12factor"
