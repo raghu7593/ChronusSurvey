@@ -383,7 +383,7 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
   text-decoration: none !important;
   font-size: 24px;
   font-weight: 700;
-  border: 1px solid #CCC;
+  border: 1px solid #DADADA;
   margin-top: 15px;
   margin-bottom: 15px;
 }
