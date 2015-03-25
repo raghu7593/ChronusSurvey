@@ -12,3 +12,6 @@
 
 #####March 25, 2014
 - [ ] Key Logging
+
+#####March 26, 2014
+- [ ] Add Puma webserver to handle concurrent requests
