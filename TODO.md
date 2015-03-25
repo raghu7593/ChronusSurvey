@@ -14,4 +14,4 @@
 - [ ] Key Logging
 
 #####March 26, 2014
-- [ ] Add Puma webserver to handle concurrent requests
+- [ ] Add Puma webserver to handle concurrent requests [https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server]
