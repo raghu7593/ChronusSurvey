@@ -33,4 +33,8 @@ class QuestionGroup < ActiveRecord::Base
     end
   end
   belongs_to :section
+
+  def has_options?
+    self.question_type == QuestionGroup::Type::SINGLE_CHOICE || self.question_type == QuestionGroup::Type::MULTI_CHOICE
+  end
 end

@@ -2,7 +2,12 @@
   <p class="fieldset">
     <%= f.text_field :question_text, :class => "full-width has-padding has-border", :placeholder => "Question Text" %>
   </p>
-  <br/>
+  <% if @question_group.has_options? %>
+    <p class="fieldset">
+      <%= f.text_field :question_text, :class => "full-width has-padding has-border", :placeholder => "Option", 'data-role'=>'tagsinput' %>
+    </p>
+    <%= javascript_tag '$("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();' %>
+  <% end %>
   <% submit_string = @question_group.id ? "Update Question" : "Create Question" %>
   <p class="fieldset">
     <%= f.submit :submit, :class => "has-padding", :value => submit_string %>

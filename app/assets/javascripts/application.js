@@ -13,6 +13,7 @@
 //= require jquery.min
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap-tagsinput
 //= require bootstrap-datepicker/core
 //= require alertify
 //= require_tree .
