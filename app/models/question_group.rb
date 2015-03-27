@@ -1,6 +1,7 @@
 class QuestionGroup < ActiveRecord::Base
   attr_accessible :allow_other_option, :position, :question_text, :question_type, :section_id
 
+  has_many :options, class_name: QuestionGroup::Option.name
   module Type
     STRING        = 0
     TEXT          = 1
