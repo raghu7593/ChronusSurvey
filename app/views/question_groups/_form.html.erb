@@ -1,10 +1,7 @@
 <%= form_for [@survey, @section, @question_group], :html=> { :class => "cd-modal-form question-group-form" } do |f| %>
-  <p class="fieldset">
-    <%= f.text_field :question_text, :class => "full-width has-padding has-border", :placeholder => "Question Text" %>
-  </p>
   <% if @question_group.has_options? %>
     <p class="fieldset">
-      <%= f.text_field :question_text, :class => "full-width has-padding has-border", :placeholder => "Option", 'data-role'=>'tagsinput' %>
+      <%= text_field_tag 'options', nil, :class => "full-width has-padding has-border", :placeholder => "Options", 'data-role'=>'tagsinput' %>
     </p>
     <%= javascript_tag '$("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();' %>
   <% end %>

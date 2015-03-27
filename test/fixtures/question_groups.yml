@@ -1,14 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  question_text: MyString
   question_type: 1
   section_id: 1
   position: 1
   allow_other_option: false
 
 two:
-  question_text: MyString
   question_type: 1
   section_id: 1
   position: 1
