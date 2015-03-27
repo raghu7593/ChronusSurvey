@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150327110929) do
+ActiveRecord::Schema.define(:version => 20150327205756) do
 
   create_table "members", :force => true do |t|
     t.string   "provider"
@@ -28,13 +28,20 @@ ActiveRecord::Schema.define(:version => 20150327110929) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "question_group_questions", :force => true do |t|
+    t.string   "title"
+    t.integer  "question_group_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "question_groups", :force => true do |t|
     t.integer  "question_type"
     t.integer  "section_id"
     t.integer  "position"
-    t.boolean  "allow_other_option"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.boolean  "allow_other_option", :default => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "sections", :force => true do |t|

@@ -13,6 +13,18 @@ class QuestionGroupsController < ApplicationController
     end
   end
 
+  def create
+    @question_group = @section.question_groups.create!(params["question_group"])
+    @question_group.questions.create!(:title => params["question_text"])
+    if @question_group.has_options?
+      options = params["options"]
+      options.split(",").each do |option|
+        @question_group.options.create!(:title => option)
+      end
+    end
+    redirect_to survey_path(@survey) and return
+  end
+
   protected
   def find_question_group
     @survey = Survey.find_by_uid(params[:survey_id])

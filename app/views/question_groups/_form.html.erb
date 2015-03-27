@@ -1,4 +1,8 @@
 <%= form_for [@survey, @section, @question_group], :html=> { :class => "cd-modal-form question-group-form" } do |f| %>
+  <%= f.hidden_field :question_type %>
+  <p class="fieldset">
+    <%= text_field_tag 'question_text', nil, :class => "full-width has-padding has-border", :placeholder => "Question Text" %>
+  </p>
   <% if @question_group.has_options? %>
     <p class="fieldset">
       <%= text_field_tag 'options', nil, :class => "full-width has-padding has-border", :placeholder => "Options", 'data-role'=>'tagsinput' %>

@@ -4,7 +4,7 @@ class CreateQuestionGroups < ActiveRecord::Migration
       t.integer :question_type
       t.integer :section_id
       t.integer :position
-      t.boolean :allow_other_option
+      t.boolean :allow_other_option, :default => false
 
       t.timestamps
     end
