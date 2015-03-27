@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20150327110929) do
   end
 
   create_table "question_groups", :force => true do |t|
-    t.string   "question_text"
     t.integer  "question_type"
     t.integer  "section_id"
     t.integer  "position"
