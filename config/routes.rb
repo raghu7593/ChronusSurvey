@@ -6,7 +6,11 @@ ChronusSurvey::Application.routes.draw do
   resources :surveys, :path => 'surveys', :only => [] do
     resources :sections, :path => 'sections'
     resources :sections, :path => 'sections', :only => [] do
-      resources :question_groups, :path => 'question_groups'
+      resources :question_groups, :path => 'question_groups' do
+        member do
+          post :preview
+        end
+      end
     end
   end
   root to: "sessions#new"
