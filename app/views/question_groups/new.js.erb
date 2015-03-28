@@ -2,6 +2,6 @@
   $('.cd-modal-header').html('Choose a Question Type');
   $('.cd-modal-data').html('<%= j(render :partial => "questions_type_list") %>');
 <% else %>
-  $('.cd-modal-header').html('<%= j(link_to (fa_icon "arrow-left", :class => "modal-header pull-left"), new_survey_section_question_group_path(@survey, @section), :remote => true, :class => "cd-modal-call") %>Add a new <%= question_type_to_text(@question_group.question_type) %> question<%= link_to (fa_icon "search", :class => "modal-header pull-right"), preview_survey_section_question_group_path(@survey, @section, QuestionGroup.first), :remote => true, :class => "cd-modal-call" %>');
+  $('.cd-modal-header').html('<%= j(link_to (fa_icon "arrow-left", :class => "modal-header pull-left"), new_survey_section_question_group_path(@survey, @section), :remote => true, :class => "cd-modal-call") %>Add a new <%= question_type_to_text(@question_group.question_type) %> question<%= link_to (fa_icon "search", :class => "modal-header pull-right"), "#", :remote => true, :class => "cd-modal-call" %>');
   $('.cd-modal-data').html('<%= j(render :partial => "form") %>');
 <% end %>
