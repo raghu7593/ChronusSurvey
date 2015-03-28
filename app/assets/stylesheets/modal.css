@@ -423,7 +423,7 @@ input[type=checkbox].modal-checkbox:checked + label.modal-checkbox-label {
 
 .social-media a.google:hover {
   color: #fff;
-  background-color: #e0191a;
+  background-color: #DA4835;
   -webkit-transition: all 0.25s ease-in;
   -moz-transition: all 0.25s ease-in;
   -o-transition: all 0.25s ease-in;
