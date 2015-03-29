@@ -4,7 +4,11 @@ ChronusSurvey::Application.routes.draw do
   get "static_pages/contact"
   resources :surveys, :path => 'surveys'
   resources :surveys, :path => 'surveys', :only => [] do
-    resources :sections, :path => 'sections'
+    resources :sections, :path => 'sections' do
+      collection do
+        post :sort
+      end
+    end
     resources :sections, :path => 'sections', :only => [] do
       resources :question_groups, :path => 'question_groups' do
         member do

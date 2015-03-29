@@ -34,6 +34,7 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'font-awesome-rails'
 gem 'rack-zippy'
+gem 'acts_as_list'
 
 group :production, :staging do
   gem "rails_12factor"
