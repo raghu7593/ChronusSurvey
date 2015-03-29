@@ -17,6 +17,6 @@ hr {
   border: 1px solid #CA0000 !important;
 }
 
-.fa {
-  margin-top: 2px;
+.handle {
+  cursor: move;
 }

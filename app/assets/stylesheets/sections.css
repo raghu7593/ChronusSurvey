@@ -1,3 +1,8 @@
+ul.sections-main-content {
+  margin: 0px;
+  list-style-type: none;
+}
+
 .section-header {
   border-top: 1px solid #CCC;
   padding: 2px 18px 2px 18px;

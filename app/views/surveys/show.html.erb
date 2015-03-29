@@ -7,20 +7,24 @@
   </div>
 </div>
 
-<ul class="sections-main-content" id="sections" data-update-url="<%= sort_survey_sections_path(@survey) %>">
+<ul class="sections-main-content jquery_sortable" id="sections" data-update-url="<%= sort_survey_sections_path(@survey) %>">
   <% @sections.each do |section| %>
-    <div class="section-info" id="section-info-<%= section.id %>">
-      <div id="section-header-<%= section.id %>" class="section-header clearfix">
-        <h4 class="pull-left">
-          <%= section.title %>&nbsp;
-          <%= link_to fa_icon("pencil"), edit_survey_section_path(@survey, section), :remote => true, :class => "cd-modal-call" %>&nbsp;
-          <%= link_to fa_icon("trash-o"), survey_section_path(@survey, section), data: { message: "Are you sure you want to delete this Section?"}, :class => "cd-popup-trigger" %>&nbsp;
-          <%= link_to fa_icon("plus"), new_survey_section_question_group_path(@survey, section), :remote => true, :class => "cd-modal-call" %>&nbsp;
-        </h4>
-        <a href="#" class="pull-right"><%= fa_icon("plus-circle") %></a>
+    <li>
+      <div class="section-info" id="section-info-<%= section.id %>">
+        <div id="section-header-<%= section.id %>" class="section-header clearfix">
+          <h4 class="pull-left">
+            <span class="handle"><%= fa_icon("bars") %></span>&nbsp;
+            <%= section.title %>&nbsp;
+            <%= link_to fa_icon("pencil"), edit_survey_section_path(@survey, section), :remote => true, :class => "cd-modal-call" %>&nbsp;
+            <%= link_to fa_icon("trash-o"), survey_section_path(@survey, section), data: { message: "Are you sure you want to delete this Section?"}, :class => "cd-popup-trigger" %>&nbsp;
+            <%= link_to fa_icon("plus"), new_survey_section_question_group_path(@survey, section), :remote => true, :class => "cd-modal-call" %>&nbsp;
+          </h4>
+          <a href="#" class="pull-right"><h4><%= fa_icon("plus-circle") %></h4></a>
+        </div>
+        <div class="section-content" id="section-content-<%= section.id %>"></div>
       </div>
-      <div class="section-content" id="section-content-<%= section.id %>"></div>
-    </div>
+    </li>
   <% end %>
-  <div class="sections-end"></div>
 </ul>
+<div class="sections-end"></div>
+<%= javascript_tag %Q[jQuerySortable.simpleSortable();] %>
