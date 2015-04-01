@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  attr_accessible :access_token, :expires, :name, :provider, :refresh_token, :uid
+  attr_accessible :access_token, :expires, :name, :provider, :refresh_token, :uid, :profile_pic
 
   def self.from_omniauth(auth)
     find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
@@ -10,6 +10,7 @@ class Member < ActiveRecord::Base
       member.provider = auth["provider"]
       member.uid = auth["uid"]
       member.name = auth["info"]["name"]
+      member.profile_pic = auth["info"]["image"]
     end
   end
 end

@@ -15,6 +15,7 @@
           <% if current_user %>
             <%= link_to "Logout", logout_path, :class => "brand nav-pull-right nav-pull-bottom" %>
             <a class="brand nav-pull-right nav-pull-bottom" href="#"><%= current_user.name.split.map(&:capitalize).join(' ') %></a>
+            <div class="nav-pull-right nav-pull-bottom"><img src="<%= current_user.profile_pic %>">&nbsp;&nbsp;</div>
           <% else %>
             <a class="brand nav-pull-right" href="/auth/google_oauth2"><%= image_tag asset_path("google-login.png") %></a>
           <% end %>

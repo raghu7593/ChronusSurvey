@@ -17,8 +17,9 @@ ActiveRecord::Schema.define(:version => 20150327205756) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "profile_pic"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "question_group_options", :force => true do |t|

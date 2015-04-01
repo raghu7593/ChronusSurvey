@@ -4,6 +4,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :name
+      t.string :profile_pic
       t.timestamps
     end
   end
