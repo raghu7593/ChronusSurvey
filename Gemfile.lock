@@ -129,7 +129,7 @@ GEM
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
-    sass (3.2.13)
+    sass (3.4.13)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -181,7 +181,7 @@ DEPENDENCIES
   rails_12factor
   rails_serve_static_assets
   rails_stdout_logging
-  sass (= 3.2.13)
+  sass
   sass-rails (~> 3.2.3)
   simple_form
   twitter-bootstrap-rails
