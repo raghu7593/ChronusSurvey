@@ -5,3 +5,4 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 ChronusSurvey::Application.config.secret_token = '7b8d4b58bdee164a80765bdd53388cc76683ee3f6719034aae917183c8cb67ec12472c48968593c9a0e2fe767dcaba503d3072b1094fd6b5cb1e3dc2913f914c'
+ChronusSurvey::Application.config.secret_key_base = '7b8d4b58bdee164a80765bdd53388cc76683ee3f6719034aae917183c8cb67ec12472c48968593c9a0e2fe767dcaba503d3072b1094fd6b5cb1e3dc2913f914c'
