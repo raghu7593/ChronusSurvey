@@ -16,8 +16,6 @@ gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', :platforms => :ruby
-
-gem 'google-webfonts'
 gem 'uglifier'
 gem 'yui-compressor'
 gem 'modernizr-rails'
