@@ -1,82 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chronus Survey</title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
+    <title>Survey</title>
+    <%= google_webfonts_link_tag "PT Sans" => [400, 700] %>
+    <%= stylesheet_link_tag :application, media: :all %>
+    <%= javascript_include_tag :modernizr %>
+    <%= javascript_include_tag :application %>
     <%= csrf_meta_tag %>
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="#"><%= image_tag asset_path("cs.png") %></a>
-          <% if current_user %>
-            <%= link_to "Logout", logout_path, :class => "brand nav-pull-right nav-pull-bottom" %>
-            <a class="brand nav-pull-right nav-pull-bottom" href="#"><%= current_user.name.split.map(&:capitalize).join(' ') %></a>
-            <div class="nav-pull-right nav-pull-bottom"><img src="<%= current_user.profile_pic %>">&nbsp;&nbsp;</div>
-          <% else %>
-            <a class="brand nav-pull-right" href="/auth/google_oauth2"><%= image_tag asset_path("google-login.png") %></a>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="side-menu">
-        <nav class="navbar navbar-default" role="navigation">
-          <div class="side-menu-container">
-            <ul class="nav navbar-nav">
-              <li>
-                <%= link_to new_survey_path, :remote => true, :class => "cd-modal-call"  do %>
-                  <span class="glyphicon"></span><%= fa_icon "line-chart" %>&nbsp;&nbsp;New Survey
-                <% end %>
-              </li>
-              <li>
-                <%= link_to static_pages_pricing_path, :remote => true, :class => "cd-modal-call"  do %>
-                  <span class="glyphicon"></span><%= fa_icon "money" %>&nbsp;&nbsp;Pricing
-                <% end %>
-              </li>
-              <li>
-                <%= link_to static_pages_credits_path, :remote => true, :class => "cd-modal-call"  do %>
-                  <span class="glyphicon"></span><%= fa_icon "plus-square" %>&nbsp;&nbsp;Credits
-                <% end %>
-              </li>
-              <li>
-                <%= link_to static_pages_contact_path, :remote => true, :class => "cd-modal-call"  do %>
-                  <span class="glyphicon"></span><%= fa_icon "comments" %>&nbsp;&nbsp;Contact Dev
-                <% end %>
-              </li>
+    <header>
+      <div class="cd-logo"><a href="#0"><img src="#" alt="Logo"></a></div>
+
+      <nav class="cd-main-nav-wrapper">
+        <ul class="cd-main-nav">
+          <li><a href="#0">About</a></li>
+          <li><a href="#0">Projects</a></li>
+          <li><a href="#0">Blog</a></li>
+          <li><a href="#0">Contact</a></li>
+          <li>
+            <a href="#0" class="cd-subnav-trigger"><span>Categories</span></a>
+
+            <ul>
+              <li class="go-back"><a href="#0">Menu</a></li>
+              <li><a href="#0">Category 1</a></li>
+              <li><a href="#0">Category 2</a></li>
+              <li><a href="#0">Category 3</a></li>
+              <li><a href="#0">Category 4</a></li>
+              <li><a href="#0">Category 5</a></li>
+              <li><a href="#0" class="placeholder">Placeholder</a></li>
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </nav>
-      </div>
-
-      <!-- Main Content -->
-      <div class="container-fluid">
-          <div class="side-body">
-            <%= yield %>
-          </div>
-      </div>
-    </div>
-
-    <div class="cd-modal">
-      <div class="cd-modal-container">
-        <span class="cd-modal-header"></span>
-        <div class="cd-modal-data">
-        </div>
-      </div>
-    </div>
-
-    <div class="cd-popup" role="alert">
-      <div class="cd-popup-container">
-        <p class="cd-popup-data"></p>
-        <ul class="cd-buttons">
-          <li><a href="#" data-method="delete" class="cd-popup-delete-action">Yes</a></li>
-          <li><a href="#" class="cd-popup-no-action">No</a></li>
-        </ul>
-        <a href="#" class="cd-popup-close img-replace"></a>
-      </div>
-    </div>
+          </li>
+        </ul> <!-- .cd-main-nav -->
+      </nav> <!-- .cd-main-nav-wrapper -->
+      
+      <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+    </header>
+    
+    <main class="cd-main-content">
+      <!-- main content here -->
+    </main>
   </body>
 </html>
