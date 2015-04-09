@@ -209,7 +209,7 @@ DEPENDENCIES
   modernizr-rails
   mysql2
   omniauth-google-oauth2
-  pg (= 0.12.2)
+  pg
   populator
   protected_attributes
   rack-zippy
