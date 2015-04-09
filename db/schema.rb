@@ -9,59 +9,59 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150327205756) do
+ActiveRecord::Schema.define(version: 20150327205756) do
 
-  create_table "members", :force => true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "profile_pic"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "members", force: :cascade do |t|
+    t.string   "provider",    limit: 255
+    t.string   "uid",         limit: 255
+    t.string   "name",        limit: 255
+    t.string   "profile_pic", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "question_group_options", :force => true do |t|
-    t.string   "title"
-    t.integer  "question_group_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+  create_table "question_group_options", force: :cascade do |t|
+    t.string   "title",             limit: 255
+    t.integer  "question_group_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "question_group_questions", :force => true do |t|
-    t.string   "title"
-    t.integer  "question_group_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+  create_table "question_group_questions", force: :cascade do |t|
+    t.string   "title",             limit: 255
+    t.integer  "question_group_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "question_groups", :force => true do |t|
-    t.integer  "question_type"
-    t.integer  "section_id"
-    t.integer  "position"
-    t.boolean  "allow_other_option", :default => false
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+  create_table "question_groups", force: :cascade do |t|
+    t.integer  "question_type",      limit: 4
+    t.integer  "section_id",         limit: 4
+    t.integer  "position",           limit: 4
+    t.boolean  "allow_other_option", limit: 1, default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "sections", :force => true do |t|
-    t.string   "title"
-    t.integer  "position"
-    t.integer  "survey_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "sections", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.integer  "position",   limit: 4
+    t.integer  "survey_id",  limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "surveys", :force => true do |t|
-    t.string   "title"
-    t.boolean  "public"
-    t.boolean  "login_required"
+  create_table "surveys", force: :cascade do |t|
+    t.string   "title",          limit: 255
+    t.boolean  "public",         limit: 1
+    t.boolean  "login_required", limit: 1
     t.date     "end_date"
-    t.text     "description"
-    t.string   "uid"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.text     "description",    limit: 65535
+    t.string   "uid",            limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
