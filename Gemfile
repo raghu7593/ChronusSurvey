@@ -5,8 +5,15 @@ gem 'rails', '4.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+group :development, :test do
+  gem 'mysql2'
+  gem 'debugger'
+end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -37,12 +44,6 @@ gem 'protected_attributes'
 gem 'rails-observers'
 gem 'actionpack-page_caching'
 
-group :production, :staging do
-  gem "rails_12factor"
-  gem "rails_stdout_logging"
-  gem "rails_serve_static_assets"
-end
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -54,13 +55,3 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-# To use debugger
-group :development do
-  gem 'debugger'
-end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
