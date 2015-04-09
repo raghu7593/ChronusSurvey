@@ -1,33 +1,5 @@
 /* -------------------------------- 
 
-Primary style
-
--------------------------------- */
-
-*, *::after, *::before {
-  @include box-sizing(border-box);
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font: {
-    size: 1.6rem;
-    family: $primary-font; // variables inside partials > _variables.scss
-  }
-  color: $main-header-color;
-  background-color: darken($color-3, 5%);
-}
-
-a {
-  color: $main-header-color;
-  text-decoration: none;
-}
-
-/* -------------------------------- 
-
 Main Components 
 
 -------------------------------- */

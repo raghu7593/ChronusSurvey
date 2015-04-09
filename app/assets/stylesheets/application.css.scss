@@ -11,10 +11,10 @@
  *= require_self
  */
 
-@import 'bourbon'; // http://bourbon.io/
-@import 'partials/variables';
-@import 'partials/mixins';
-@import 'partials/layout';
-@import 'font.css';
-@import 'reset.css.scss';
-@import 'style.css.scss';
+@import "bourbon"; // http://bourbon.io/
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/layout";
+@import "font";
+@import "reset";
+@import "navigation_bar";
