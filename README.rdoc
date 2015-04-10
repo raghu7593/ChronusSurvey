@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/raghuteja/Survey.svg?branch=feature_upgrade)](https://travis-ci.org/raghuteja/Survey)
+
 == Surveys for Chronus
 
 An app developed to learn about ruby on rails
