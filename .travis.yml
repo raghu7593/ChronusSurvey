@@ -2,3 +2,5 @@ language: ruby
 before_script:
   - mysql -e 'create database chronussurvey_test;'
   - bundle exec rake db:migrate RAILS_ENV=test
+script:
+  - rake test:units test:functionals RAILS_ENV=test
