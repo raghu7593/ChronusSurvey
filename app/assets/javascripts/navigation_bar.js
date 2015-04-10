@@ -1,48 +1,46 @@
 jQuery(document).ready(function($){
-  //move nav element position according to window width
-  moveNavigation();
-  $(window).on('resize', function(){
-    (!window.requestAnimationFrame) ? setTimeout(moveNavigation, 300) : window.requestAnimationFrame(moveNavigation);
-  });
+  var $lateral_menu_trigger = $('#cd-menu-trigger'),
+    $content_wrapper = $('.cd-main-content'),
+    $navigation = $('header');
 
-  //mobile version - open/close navigation
-  $('.cd-nav-trigger').on('click', function(event){
+  //open-close lateral menu clicking on the menu icon
+  $lateral_menu_trigger.on('click', function(event){
     event.preventDefault();
-    if($('header').hasClass('nav-is-visible')) $('.moves-out').removeClass('moves-out');
     
-    $('header').toggleClass('nav-is-visible');
-    $('.cd-main-nav').toggleClass('nav-is-visible');
-    $('.cd-main-content').toggleClass('nav-is-visible');
-  });
-
-  //mobile version - go back to main navigation
-  $('.go-back').on('click', function(event){
-    event.preventDefault();
-    $('.cd-main-nav').removeClass('moves-out');
-  });
-
-  //open sub-navigation
-  $('.cd-subnav-trigger').on('click', function(event){
-    event.preventDefault();
-    $('.cd-main-nav').toggleClass('moves-out');
-  });
-
-  function moveNavigation(){
-    var navigation = $('.cd-main-nav-wrapper');
-      var screenSize = checkWindowWidth();
-        if ( screenSize ) {
-          //desktop screen - insert navigation inside header element
-      navigation.detach();
-      navigation.insertBefore('.cd-nav-trigger');
-    } else {
-      //mobile screen - insert navigation after .cd-main-content element
-      navigation.detach();
-      navigation.insertAfter('.cd-main-content');
+    $lateral_menu_trigger.toggleClass('is-clicked');
+    $navigation.toggleClass('lateral-menu-is-open');
+    $content_wrapper.toggleClass('lateral-menu-is-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+      // firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+      $('body').toggleClass('overflow-hidden');
+    });
+    $('#cd-lateral-nav').toggleClass('lateral-menu-is-open');
+    
+    //check if transitions are not supported - i.e. in IE9
+    if($('html').hasClass('no-csstransitions')) {
+      $('body').toggleClass('overflow-hidden');
     }
-  }
+  });
 
-  function checkWindowWidth() {
-    var mq = window.getComputedStyle(document.querySelector('header'), '::before').getPropertyValue('content').replace(/"/g, '');
-    return ( mq == 'mobile' ) ? false : true;
-  }
+  //close lateral menu clicking outside the menu itself
+  $content_wrapper.on('click', function(event){
+    if( !$(event.target).is('#cd-menu-trigger, #cd-menu-trigger span') ) {
+      $lateral_menu_trigger.removeClass('is-clicked');
+      $navigation.removeClass('lateral-menu-is-open');
+      $content_wrapper.removeClass('lateral-menu-is-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+        $('body').removeClass('overflow-hidden');
+      });
+      $('#cd-lateral-nav').removeClass('lateral-menu-is-open');
+      //check if transitions are not supported
+      if($('html').hasClass('no-csstransitions')) {
+        $('body').removeClass('overflow-hidden');
+      }
+
+    }
+  });
+
+  //open (or close) submenu items in the lateral menu. Close all the other open submenu items.
+  $('.item-has-children').children('a').on('click', function(event){
+    event.preventDefault();
+    $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200).end().parent('.item-has-children').siblings('.item-has-children').children('a').removeClass('submenu-open').next('.sub-menu').slideUp(200);
+  });
 });

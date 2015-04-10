@@ -1,3 +1,8 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,32 +46,3 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-
-*, *::after, *::before {
-  @include box-sizing(border-box);
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font: {
-    size: 1.6rem;
-    family: $primary-font; // variables inside partials > _variables.scss
-  }
-  color: $main-header-color;
-  background-color: darken($color-3, 5%);
-}
-
-a {
-  color: $main-header-color;
-  text-decoration: none;
-}
-
