@@ -13,7 +13,16 @@
       <a id="cd-logo" href="#0"><%= image_tag asset_path("cs.png") %></a>
       <nav id="cd-top-nav">
         <ul>
-          <li><a href="#" class="cd-modal-call">Login</a></li>
+          <% if current_user %>
+            <li><%= link_to current_user.name.split.map(&:capitalize).join(' '), "#" %></li>
+            <li><%= link_to "Logout", logout_path, :class => "brand nav-pull-right nav-pull-bottom" %></li>
+          <% else %>
+            <li>
+              <%= link_to "/auth/google_oauth2"  do %>
+                <%= fa_icon "google" %>&nbsp;Login
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </nav>
       <a id="cd-menu-trigger" href="#0"><span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span></a>
@@ -55,11 +64,17 @@
       </ul> <!-- cd-navigation -->
 
       <ul class="cd-navigation cd-single-item-wrapper">
-        <li><a href="#0">Tour</a></li>
-        <li><a href="#0">Login</a></li>
-        <li><a href="#0">Register</a></li>
-        <li><a href="#0">Pricing</a></li>
-        <li><a href="#0">Support</a></li>
+        <% if current_user %>
+          <li>
+            <%= link_to "New Survey", new_survey_path, :remote => true, :class => "cd-modal-call" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "/auth/google_oauth2"  do %>
+              <%= fa_icon "google" %>&nbsp;Login
+            <% end %>
+          </li>
+        <% end %>
       </ul> <!-- cd-single-item-wrapper -->
 
       <ul class="cd-navigation cd-single-item-wrapper">
