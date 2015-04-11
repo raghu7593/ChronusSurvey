@@ -1,21 +1,12 @@
 // colors
-
 $main-text: #4e6361; // main text
 $link: #6cac70; // anchor tags
 $background: #f5f4e9; // body background color
-
-$color-navigation-bar: #4e6361; // green dark
-$color-navigation-sidebar: #242e30; // green darker
-$color-light-green: #aab5b7; // green light
-
-$color-1: #343642; // blue-dark
-$color-2: #2f889a; // blue-light
-$color-3: #d2d8d8; // grey
-
-$red: #d76666; // error messages
+$color-dark-green: #4e6361; // green dark
+$color-darker-green: darken($color-dark-green, 20%); // green darker
+$color-light-green: lighten($color-dark-green, 50%); // green light
 
 // fonts 
-
 $primary-font: 'Titillium Web', sans-serif;
 
 // z-index 

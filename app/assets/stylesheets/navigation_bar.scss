@@ -54,7 +54,7 @@ header {
   left: 0;
   height: $header-S;
   width: 100%;
-  background: $color-navigation-bar;
+  background: $color-dark-green;
   z-index: $header-zindex;
 
   /* Force Hardware Acceleration in WebKit */
@@ -119,7 +119,7 @@ header {
     font-weight: 600;
 
     &.current {
-      background-color: $color-navigation-sidebar;
+      background-color: $color-darker-green;
     }
 
     .no-touch &:hover {
@@ -138,7 +138,7 @@ header {
   top: 0;
   height: 100%;
   width: 50px;
-  background-color: lighten($color-navigation-bar, 10%);
+  background-color: lighten($color-dark-green, 10%);
 
   .cd-menu-text {
     height: 100%;
@@ -226,7 +226,7 @@ header {
   z-index: $secondary-nav; // see partials > _variables.scss
 
   width: 260px;
-  background-color: $color-navigation-sidebar;
+  background-color: $color-darker-green;
 
   overflow-y: auto;
 
@@ -257,7 +257,7 @@ header {
     color: $color-light-green;
 
     &.current {
-      background-color: lighten($color-navigation-sidebar, 10%);
+      background-color: lighten($color-darker-green, 10%);
       color: #FFF;
     }
 
@@ -346,7 +346,7 @@ header {
     }
 
     .no-touch &:hover {
-      background-color: $color-navigation-bar;
+      background-color: $color-dark-green;
 
       &.cd-twitter {
         background-position: 0 -32px;
