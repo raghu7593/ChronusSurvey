@@ -10,6 +10,13 @@
   font-size: calculateRem($size);
 }
 
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 // center vertically and/or horizontally an absolute positioned element
 
 @mixin center($xy:xy) {
