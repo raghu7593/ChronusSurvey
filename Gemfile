@@ -7,7 +7,7 @@ group :development, :test do
   gem 'debugger'
 end
 
-group :production, :staging do
+group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
