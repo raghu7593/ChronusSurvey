@@ -1,19 +1,17 @@
-jQuery(document).ready(function($){
-  if( $('.floating-labels').length > 0 ) floatLabels();
-
-  function floatLabels() {
+var HtmlForm = {
+  floatLabels: function() {
     var inputFields = $('.floating-labels .cd-label').next();
     inputFields.each(function(){
       var singleInput = $(this);
       //check if user is filling one of the form fields 
-      checkVal(singleInput);
+      HtmlForm.checkVal(singleInput);
       singleInput.on('change keyup', function(){
-        checkVal(singleInput);  
+        HtmlForm.checkVal(singleInput);  
       });
     });
-  }
+  },
 
-  function checkVal(inputField) {
+  checkVal: function(inputField) {
     ( inputField.val() == '' ) ? inputField.prev('.cd-label').removeClass('float') : inputField.prev('.cd-label').addClass('float');
   }
-});
+}

@@ -7,18 +7,11 @@ Form
 .cd-form {
   width: 90%;
   max-width: $M; // breakpoints inside partials > _layout.scss
-  margin: 4em auto;
+  margin: auto;
   @include clearfix;
 
   fieldset {
-    margin: 24px 0;
-  }
-
-  legend {
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    border-bottom: 1px solid $color-3;
+    padding-bottom: 28px;
   }
 
   div {
@@ -28,8 +21,8 @@ Form
   }
 
   h4, .cd-label {
-    font-size: 1.3rem;
-    color: darken($color-3, 30%);
+    font-size: 1.2rem;
+    color: darken($color-light-green, 30%);
     margin-bottom: 10px;
   }
 
@@ -39,15 +32,12 @@ Form
 
   input, textarea, select, label {
     font-family: $primary-font;
-    font-size: 1.6rem;
-    color: $color-1;
   }
 
   input[type="text"], 
   input[type="email"], 
   textarea, 
-  select,
-  legend {
+  select {
     display: block;
     width: 100%;
     @include appearance(none);
@@ -59,15 +49,14 @@ Form
   select {
     /* general style for input elements */
     padding: 12px;
-    border: 1px solid darken($color-3, 10%);
-    background-color: $color-4;
+    border: 1px solid darken($color-light-green, 10%);
     border-radius: .25em;
     box-shadow: inset 0 1px 1px rgba(#000, .08);
 
     &:focus {
       outline: none;
-      border-color: $color-2;
-      box-shadow: 0 0 5px rgba($color-2, .2);
+      border-color: $color-dark-green;
+      box-shadow: 0 0 5px rgba($color-dark-green, .2);
     }
   }
 
@@ -104,6 +93,7 @@ Form
 
   .cd-form-list {
     margin-top: 16px;
+    text-align: center;
     @include clearfix;
   }
 
@@ -113,7 +103,6 @@ Form
     position: relative;
     @include user-select(none);
     margin: 0 26px 16px 0;
-    float: left;
   }
 
   input[type=radio],
@@ -151,8 +140,7 @@ Form
 
   input[type="radio"] + label::before,
   input[type="checkbox"] + label::before {
-    border: 1px solid darken($color-3, 10%);
-    background: $color-4;
+    border: 1px solid darken($color-light-green, 10%);
     box-shadow: inset 0 1px 1px rgba(#000, .08);
   }
 
@@ -168,10 +156,10 @@ Form
 
   input[type="radio"] + label::after,
   input[type="checkbox"] + label::after {
-    background-color: $color-2;
+    background-color: $color-dark-green;
     background-position: center center;
     background-repeat: no-repeat;
-    box-shadow: 0 0 5px rgba($color-2, .4);
+    box-shadow: 0 0 5px rgba($color-dark-green, .4);
     display: none;
   }
 
@@ -188,7 +176,7 @@ Form
   input[type="radio"]:focus + label::before,
   input[type="checkbox"]:focus + label::before {
     /* add focus effect for radio and check buttons */
-    box-shadow: 0 0 5px rgba($color-2, .6);
+    box-shadow: 0 0 5px rgba($color-dark-green, .6);
   }
 
   input[type="radio"]:checked + label::after,
@@ -204,31 +192,30 @@ Form
   }
 
   textarea {
-    min-height: 200px;
+    min-height: 120px;
     resize: vertical;
     overflow: auto;
   }
 
   input[type="submit"] {
     /* button style */
+    width: 100%;
     border: none;
-    background: $color-2;
+    background: $color-dark-green;
     border-radius: .25em;
     padding: 16px 20px;
-    color: $color-4;
+    color: $color-white;
     font-weight: bold;
-    float: right;
     cursor: pointer;
     @include font-smoothing;
     @include appearance(none);
 
     .no-touch &:hover {
-      background: lighten($color-2, 5%);
+      background: lighten($color-dark-green, 5%);
     }
 
     &:focus {
       outline: none;
-      background: $color-1;
     }
 
     &:active {
@@ -240,18 +227,8 @@ Form
     background: asset_url('cd-required.svg') no-repeat top right;
   }
 
-  .error-message p {
-    background: $color-5;
-    color: $color-4;
-    font-size: 1.4rem;
-    text-align: center;
-    @include font-smoothing;
-    border-radius: .25em;
-    padding: 16px;
-  }
-
   .error {
-    border-color: $color-5 !important;
+    border-color: $color-red !important;
   }
 
   @include MQ(M) {
@@ -260,21 +237,8 @@ Form
       margin: 32px 0;
     }
 
-      legend + div {
-      /* reduce margin-top for first form element after the legend */
-      margin-top: 20px;
-    }
-
     h4, .cd-label {
-      font-size: 1.4rem;
       margin-bottom: 10px;
-    }
-
-    input[type="text"], 
-    input[type="email"], 
-    textarea, 
-    select {
-      padding: 16px;
     }
   }
 }
@@ -291,58 +255,6 @@ Form
 
 /* -------------------------------- 
 
-Custom icons
-
--------------------------------- */
-
-.cd-form {
-  .icon input, .icon select, .icon textarea {
-    padding-left: 54px !important;
-  }
-
-  .user {
-    background: asset_url('cd-icon-user.svg') no-repeat 16px center;
-  }
-
-  [required].user {
-    background: asset_url('cd-icon-user.svg') no-repeat 16px center, 
-          asset_url('cd-required.svg') no-repeat top right;
-  }
-
-  .company {
-    background: asset_url('cd-icon-company.svg') no-repeat 16px center;
-  }
-
-  [required].company {
-    background: asset_url('cd-icon-company.svg') no-repeat 16px center, 
-          asset_url('cd-required.svg') no-repeat top right;
-  }
-
-  .email {
-    background: asset_url('cd-icon-email.svg') no-repeat 16px center;
-  }
-
-  [required].email {
-    background: asset_url('cd-icon-email.svg') no-repeat 16px center, 
-          asset_url('cd-required.svg') no-repeat top right;
-  }
-
-  .budget {
-    background: asset_url('cd-icon-budget.svg') no-repeat 16px center;
-  }
-
-  .message {
-    background: asset_url('cd-icon-message.svg') no-repeat 16px 16px;
-  }
-
-  [required].message {
-    background: asset_url('cd-icon-message.svg') no-repeat 16px 16px, 
-          asset_url('cd-required.svg') no-repeat top right;
-  }
-}
-
-/* -------------------------------- 
-
 FLoating labels 
 
 -------------------------------- */
@@ -354,33 +266,19 @@ FLoating labels
 
   .cd-label {
     position: absolute;
-    top: 16px;
-    left: 16px;
-    font-size: 1.6rem;
+    top: 14px;
+    left: 14px;
     cursor: text;
     @include transition(top .2s, left .2s, font-size .2s);
   }
 
-  .icon .cd-label {
-    left: 56px;
-  }
-
   .cd-label.float {
     /* move label out the input field */
-    font-size: 1.2rem;
-    top: -16px;
+    font-size: 1rem;
+    top: -20px;
     left: 0 !important;
   }
 
   @include MQ(M) {
-
-    legend + div {
-      /* reduce margin-top for first form element after the legend */
-      margin-top: 16px;
-    }
-
-    .cd-label {
-      top: 20px;
-    }
   }
 }

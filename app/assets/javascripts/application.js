@@ -12,4 +12,6 @@
 //
 //= require jquery.min
 //= require jquery_ujs
-//= require_tree .
+//= require modal
+//= require navigation_bar
+//= require html_form
